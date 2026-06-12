@@ -1,0 +1,11 @@
+{
+  "name": "What Doctors Wish You Knew",
+  "short_name": "WDWYK",
+  "icons": [
+    { "src": "/heart-apple-favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/heart-apple-favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0F6E56",
+  "background_color": "#FAF6ED",
+  "display": "standalone"
+}
