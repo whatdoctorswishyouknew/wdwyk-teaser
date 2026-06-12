@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Doctors Wish You Knew — In the works</title>
+<!-- INDEXED (LP-D12 executed at deploy 2026-06-12): noindex removed in the same deploy that
+     carries the identity meta — the compounding clock starts with this page. -->
+<meta name="description" content="WhatDoctorsWishYouKnew.org is a free, doctor-founded home for health answers anyone can understand — because you are worth the time, and bad information does real harm. It aspires to become a global, independent nonprofit that turns the best available evidence into clear, plain-language health information, working to improve health worldwide.">
+<link rel="icon" type="image/png" href="./logo.png"><!-- stray purple-bolt favicon.svg DELETED (LP-D11); PNG favicon = the apple-heart; a hand-drawn SVG favicon stays docketed for brand 0.9 -->
+<link rel="apple-touch-icon" href="./logo.png">
+<meta property="og:title" content="What Doctors Wish You Knew — in the works">
+<meta property="og:description" content="A free, doctor-founded home for health answers anyone can understand. Worth getting right — so we're taking the time.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatdoctorswishyouknew.org/">
+<meta property="og:image" content="https://whatdoctorswishyouknew.org/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "What Doctors Wish You Knew",
+  "url": "https://whatdoctorswishyouknew.org/",
+  "logo": "https://whatdoctorswishyouknew.org/logo.png",
+  "description": "WhatDoctorsWishYouKnew.org is a free, doctor-founded home for health answers anyone can understand — because you are worth the time, and bad information does real harm. It aspires to become a global, independent nonprofit that turns the best available evidence into clear, plain-language health information, working to improve health worldwide."
+}
+</script>
+<style>
+  :root{
+    --canvas:#FAF6ED; --ink:#04342C; --teal:#0F6E56;
+    --hairline:#E6DECC; --muted:#5B6B72;
+  }
+  *{box-sizing:border-box;}
+  html{height:100%;margin:0;}
+  body{min-height:100%;margin:0;} /* min-height, not height: height+flex-center clips the top (logo/kicker) unreachably on any viewport shorter than content — i.e. most phones and all 200% zoom */
+  body{
+    background:var(--canvas); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:flex; align-items:center; justify-content:center;
+    padding:40px 24px; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    font-size:17px; line-height:1.6;
+  }
+  .wrap{ max-width:600px; text-align:center; }
+
+  @keyframes rise{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+  .wrap > *{ animation:rise .6s ease both; }
+  .logo{ animation-delay:0s; }
+  .kicker{ animation-delay:.07s; }
+  .wordmark{ animation-delay:.14s; }
+  .ecg{ animation-delay:.20s; }
+  .hero{ animation-delay:.28s; }
+  .sub{ animation-delay:.34s; }
+  .pill{ animation-delay:.40s; }
+  .progress{ animation:none; }
+  .library{ animation-delay:.46s; }
+  .notify{ animation-delay:.50s; }
+  footer{ animation-delay:.56s; }
+  @media (prefers-reduced-motion: reduce){
+    .wrap > *{ animation:none !important; opacity:1 !important; transform:none !important; }
+  }
+
+  .logo{ width:104px; height:104px; margin:0 auto 18px; display:block; }
+  .kicker{
+    font-size:.875rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--teal); font-weight:700; margin:0 0 12px;
+  }
+  .wordmark{
+    font-family:Georgia,"Times New Roman",serif; font-weight:700;
+    font-size:clamp(2.25rem,7.4vw,3.125rem); letter-spacing:-.015em; line-height:1.1;
+    color:var(--teal); margin:0 auto 16px; text-wrap:balance; max-width:13ch;
+  }
+  .ecg{ display:block; margin:0 auto 24px; }
+  .hero{
+    font-family:Georgia,"Times New Roman",serif; font-weight:600;
+    font-size:clamp(1.125rem,3vw,1.3125rem); line-height:1.4; color:var(--ink);
+    letter-spacing:-.005em; margin:0 auto 12px;
+  }
+  .hero span{ display:block; text-wrap:balance; }
+  .sub{
+    font-size:clamp(1rem,2.4vw,1.0625rem); line-height:1.6; color:var(--muted); /* floor 16px: sub carries "doctor-founded" = trust text */
+    margin:0 auto 24px; max-width:52ch; text-wrap:balance; text-wrap:pretty;
+  }
+  .sub .coda{ display:block; margin-top:4px; font-weight:600; color:var(--ink); }
+  .stamp{ font-style:italic; color:var(--teal); font-size:16px; margin:14px 0 0; }
+  .progress{ max-width:460px; margin:24px auto 0; text-align:left; }
+  .claims .claim{ white-space:nowrap; }
+  @media (max-width:479px){
+    .claims .claim{ display:block; white-space:normal; }
+    .claims .sep{ display:none; }
+    .ecg{ margin-bottom:16px; }
+    .sub .half.b{ display:block; }
+    .progress{ margin-top:16px; }
+  }
+  .plabels{ display:flex; justify-content:space-between; align-items:baseline; font-size:16px; color:var(--ink); margin:0 0 8px; }
+  .plabels h2{ font-size:16px; font-weight:600; margin:0; }
+  .plabels .ppct{ font-weight:600; }
+  .ptrack{ position:relative; height:10px; background:#fff; border:1px solid var(--hairline); border-radius:999px; overflow:hidden; }
+  .pfill{ position:absolute; left:0; top:0; bottom:0; border-radius:999px; }
+  .pfill.drafted{ background:rgba(15,110,86,0.38); min-width:10px; }
+  .pfill.verified{ background:var(--teal); }
+  .pgate{ font-size:16px; color:var(--muted); margin:8px 0 0; line-height:1.5; }
+  .plink{ font-size:16px; margin:8px 0 0; }
+  .plink a{ color:var(--teal); display:inline-block; padding:14px 0; margin:-10px 0; } /* ≥48px target, rhythm preserved */
+  .pill{
+    display:inline-block; font-size:16px; font-weight:600; color:var(--teal);
+    border:1px solid var(--hairline); background:#fff; border-radius:999px; padding:10px 20px;
+    text-wrap:balance;
+  }
+  .status{
+    font-size:16px; color:var(--muted); margin:26px auto 0; max-width:46ch;
+  }
+  .status a{ color:var(--teal); }
+  .library{
+    display:inline-block; margin:14px auto 0; font-size:16px; color:var(--teal);
+    text-decoration:underline; text-underline-offset:3px; padding:10px 6px; min-height:48px;
+  }
+  .notify{
+    background:#fff; border:1px solid var(--hairline); border-radius:16px;
+    max-width:460px; margin:26px auto 0; padding:20px 20px 14px; text-align:left;
+  }
+  .notify h2{ font-size:17px; font-weight:600; margin:0 0 10px; color:var(--ink); }
+  .nrow{ display:flex; gap:8px; }
+  .nrow input[type=email]{
+    flex:1; height:52px; border:1.5px solid var(--muted); border-radius:999px;
+    padding:0 18px; font-size:16px; color:var(--ink); background:#fff; min-width:0;
+  }
+  .nrow input[type=email]:focus-visible, .nrow button:focus-visible, a:focus-visible{
+    outline:2px solid var(--teal); outline-offset:2px;
+  }
+  .nrow button{
+    height:52px; padding:0 22px; border:none; border-bottom:2px solid var(--ink);
+    border-radius:999px; background:var(--teal); color:#fff; font-size:16px; font-weight:600; cursor:pointer;
+  }
+  .nrow button:active{ transform:translateY(1px); }
+  .hp{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+  .consent{ font-size:16px; color:var(--muted); line-height:1.5; margin:10px 2px 0; }
+  .nmsg{ font-size:15px; margin:8px 2px 0; color:var(--teal); display:none; }
+  footer{ margin:32px 0 0; font-size:16px; color:var(--muted); line-height:1.75; }
+  footer .sep{ opacity:.5; }
+  footer .lede{ font-size:16px; color:var(--muted); max-width:52ch; margin:0 auto 14px; line-height:1.6; }
+  .domline{ margin:16px 0 0; }
+  .domline .dom{ color:var(--teal); font-weight:600; font-size:16px; }
+
+  @media (max-width:480px){
+    body{ padding:32px 18px; }
+    .logo{ width:86px; height:86px; margin-bottom:16px; }
+    .nrow{ flex-direction:column; }
+    .nrow button{ width:100%; }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <img class="logo" src="./logo.png" alt="What Doctors Wish You Knew logo — an apple-heart with a heartbeat line">
+    <p class="kicker">In the works</p>
+    <h1 class="wordmark">What Doctors Wish You Knew</h1>
+    <svg class="ecg" width="56" height="16" viewBox="0 0 56 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M0 8 H19 L23 3 L28 13.5 L33 5 L37 8 H56" stroke="#0F6E56" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <p class="hero"><span>Search the explanations a good&nbsp;doctor would give,</span><span>if the visit never had to end.</span></p>
+    <!-- HERO STATE (round 7 — gate CLEARED, style-tier, founder's call): the imperative reads as the
+         FUTURE EXPERIENCE BEING NAMED, not a UI instruction, BECAUSE the frame cancels the implication
+         before anyone can act on it. FRAME-BOUND CONDITION (binding): the kicker "IN THE WORKS" +
+         the "We're building…" block + the progress bar must share this hero's first viewport at every
+         breakpoint, AND this line never travels excerpted (no og/title/meta/social-card/pull-quote/
+         AI-cite use). Remove any frame element and round 6 reinstates automatically ("We're building
+         the explanations…"). Deps intact: dep-3 comma variant (pre-authorized), nbsp "good doctor",
+         if-clause never truncated, hero-noun "explanations". "We share…" (the full locked hero, dash
+         form) belongs to the real homepage above a live search box, and returns here with the drafts
+         link (~100 completed cards — founder to define drafted vs verified). -->
+    <p class="sub"><span class="half a">We&rsquo;re building a free, doctor-founded home for health answers anyone can understand&nbsp;&mdash;</span> <span class="half b">because bad information does real harm, and understanding can change everything.</span><span class="coda">For you, and the people you love.</span></p>
+    <!-- Round 7 (founder format): the full block returns — hero is now "Search…" so the single
+         "We're building" lives here. Locks verified: both "can"s intact; "change everything." stays
+         attached to "For you, and the people you love." -->
+
+    <!-- GATE-PASSED ROUND 5: the founder's merged block — descriptor remix (teaser-scoped; the About page
+         keeps the full locked 0.2 form incl. "Together with you" + "you are worth the time") + the 0.1
+         sub-words relocated here. Locks verified: both "can"s intact; "change everything." stays attached
+         to "For you, and the people you love."; the hero keeps its dash (the payoff renders on this same
+         screen — the comma variant is for slots where the sub is absent entirely). -->
+
+    <!-- HERO CONDITIONS (locked 0.1; Safety re-rule 2026-06-11): the pair is WELDED to the work-bar below
+         (visible substantiation — integrity-dep-6 class: never detach, never truncate "can" or the if-clause,
+         sub's two sentences never split, nbsp in "good doctor"). Hero enters NO title/og field (descriptor
+         stays og:description; the AI-cite string is the meta description). If the library link below ever
+         goes dark, "We share" reverts to "We're building". The 0.2 descriptor retired from this surface
+         to meta/schema (WM subtraction ruling 2026-06-11). -->
+    <span class="pill">Worth getting right &mdash; so we&rsquo;re taking the time.</span>
+
+    <div class="progress">
+      <div class="plabels"><h2 id="plabel">Progress toward opening day</h2><span class="ppct">3%</span></div>
+      <div class="ptrack" role="progressbar" aria-labelledby="plabel" aria-valuemin="0" aria-valuemax="106" aria-valuenow="4" aria-valuetext="3 percent — 4 of 106 launch-plan steps complete">
+        <span class="pfill verified" style="width:3.7%"></span>
+      </div>
+      <!-- STEP COUNTS INTERNAL (founder, rounds 8–9): the visible bar shows the percent only — a
+           self-assessment against the internal plan (4 of 106 steps, Monday-counted; aria carries
+           the full numbers for screen readers). The standing basis line was removed from the public
+           progress page by founder direction; disclosure is EVENT-DRIVEN instead (binding Monday-
+           review rule): whenever the denominator grows and the percent dips, that Monday's build-log
+           entry explains it in reader-plain words — the bar never moves backward unexplained. The
+           progress page remains this link's live target (never a dead link). -->
+      <!-- TASKS BAR (founder elected gate option (b), round 5 — second ask wins the honest form):
+           counts = the tracked plan (Phase 0's 38 steps + the launch spine's 68 = 106; complete: 0.1,
+           0.2, 0.3, LP-C1 = 4). The Monday review re-counts weekly from TO-DO checkboxes; when the
+           plan GROWS (phases 1–11 synthesis), the denominator grows and the % may drop — that re-base
+           is disclosed on the changelog each time, never silent. Percent always rounds DOWN; the fill
+           never animates; solid teal = completed work. The 51-of-500 answers form retired from the bar
+           (the library link still carries the drafted count). -->
+      <p class="plink"><a href="./progress/">This month: locked our launch plan &mdash; updated every Monday &rarr;</a></p>
+      <!-- THE PULSE LINE (gate-passed): refilled at each Monday review with the changelog's newest
+           milestone in reader-plain words — the bar's denominator never re-bases; the line carries
+           the motion. (The founder's "N of N tasks complete" was declined honestly: today's truthful
+           tasks figure is 4 of 106 = 3% — less progress, in an internal unit, with a denominator
+           that grows under readers' feet. Promise constant, heartbeat moving.) -->
+      <!-- Gate sublabel removed (founder, 2026-06-11) — style-tier: the draft-status disclosure survives
+           on this screen via the library link ("in review, not yet verified"), which must remain
+           as long as the bar renders. The bar label stays "drafted" (never implies verified). -->
+    </div>
+    <!-- BAR RULES (ledger draft-status row; Safety conditions 2026-06-11): numbers render from card data
+         once live — until then the Monday review owns them (stale = pull the module); percent always rounds
+         DOWN; drafted = tint, verified = solid — meaning carried by the labels + aria-valuetext, never hue
+         alone; the fill NEVER animates (no fake momentum); denominator = the locked §11 gate (500). -->
+
+    <!-- LIBRARY LINK REMOVED (founder, round 6): no click-through to drafts from the teaser. DOCKET:
+         the link returns at ~100 completed cards (founder to define "completed" — drafted vs §11-verified;
+         verified aligns with the open-wing gate). NOTE: the v0 library itself STAYS LIVE at its URL
+         (posture A's compounding — indexation, AI citations, bookmarks, crisis routing — continues;
+         Growth's veto was against taking v0 down, not against unlinking the teaser). When the link
+         returns, the hero's "We share" returns with it. -->
+
+    <!-- EMAIL CAPTURE DEFERRED (founder, 2026-06-11): the notify block is OFF for now and returns on
+         the founder's word. Cost named on the record: the list is the launch's only owned ignition —
+         every month without capture is launch audience not accruing (Growth). The build tasks stay
+         docketed (worker patch: form-encoded POSTs -> 303, honeypot drops, .org origins). The
+         gate-passed block (heading "Want to know when we open?" · button "Tell me when it's ready" ·
+         consent "At most 4 emails a year — milestones and early previews, nothing else. Unsubscribe
+         anytime, one click. We never sell your data.") is preserved here for one-edit restoration. -->
+
+    <footer>
+      <p class="claims" style="margin:0"><span class="claim">Independent<span class="sep"> &middot; </span></span><span class="claim">Doctor-founded<span class="sep"> &middot; </span></span><span class="claim">Led by evidence</span></p>
+      <p class="claims" style="margin:0"><span class="claim">No ads<span class="sep"> &middot; </span></span><span class="claim">No drug, device, or supplement money<span class="sep"> &middot; </span></span><span class="claim">No sponsors shaping our answers</span></p>
+      <p class="stamp">&ldquo;The truth is not for sale.&rdquo;</p>
+      <!-- FOOTER LINE (gate-passed 2026-06-11, round 4): the founder's rhythm in honest forms. The vetoed
+           items stay vetoed: "Nonprofit" noun = GATED_FALSE until the IRS determination letter (unlocks
+           verbatim that day); bare "industry money" never renders — named form only; "no influenced
+           answers" rendered as the locked softened form "No sponsors shaping our answers" (the absolute
+           was retired 2026-06-07 as indefensible). Mobile fallback: drop the money segment WHOLE, never
+           shorten it. The 0.2 descriptor (verbatim, locked) returns here as the "what we're building"
+           line — it meets the reader who scrolled (WM placement ruling; the grievance hybrid "tired of
+           misinformed partial truths" was declined: it makes the line about our frustration, not the
+           reader — the locked "bad information does real harm" carries the same conviction calmly). -->
+      <!-- Entity claim dropped from this surface 2026-06-11 (claim-silence): ledger becoming-nonprofit no longer lists landing; nonprofit-noun stays GATED_FALSE until the determination letter — the calendar never flips a claim. -->
+      <!-- Emergency line removed by Safety re-rule 2026-06-11 (this surface has no health content and no search box; crisis routing + disclaimer live on every library page, LP-C6 weekly SLA). AUTO-RETURN: adding ANY health content, search box, or crisis-adjacent copy here restores the line — no re-workshop needed. -->
+      <p class="domline"><span class="dom">WhatDoctorsWishYouKnew.org</span></p>
+    </footer>
+  </main>
+</body>
+</html>
